@@ -1,0 +1,57 @@
+#sign-in {
+    position: relative;
+    margin-top: 5em;
+    width: 20em;
+    height: 3em;
+    border-radius: 10px;
+    background-color: black;
+    border: 2px solid black;
+    font-size: 20px;
+
+}
+.navbar {
+    margin-bottom: 0;
+    background-color: #000;
+    z-index: 9999;
+    border: 0;
+    /* font-size: 12px !important; */
+    /* line-height: 1.42857143 !important; */
+    letter-spacing: 4px;
+    border-radius: 0;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+
+.jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+    padding: 400px 0px;
+    background-image: url("/assets/achtergrond.jpg");
+    margin-top: -1.5em;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
+
+  .glyphicon {
+    color: #F6BE00;
+  }
+
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+  }

@@ -1,0 +1,8 @@
+.thumbnail {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    height: 20em;
+    margin-left: 23%;
+    margin-top: 10%;
+}

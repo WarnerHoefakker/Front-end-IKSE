@@ -13,6 +13,8 @@ import { SigninComponent } from './signin/signin.component';
 import { RegisterComponent } from './register/register.component';
 import { ProductsComponent } from './products/products.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+import { AdminPortalComponent } from './admin-portal/admin-portal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FrontpageComponent } from './frontpage/frontpage.component';
     SigninComponent,
     RegisterComponent,
     ProductsComponent,
-    FrontpageComponent
+    FrontpageComponent,
+    ShoppingcartComponent,
+    AdminPortalComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,7 @@ import { FrontpageComponent } from './frontpage/frontpage.component';
     FormsModule
     
   ],
-  exports: [BsDropdownModule, TooltipModule, ModalModule, FormsModule, ReactiveFormsModule],
+  exports: [BsDropdownModule, TooltipModule, ModalModule, FormsModule, ReactiveFormsModule, ProductsComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

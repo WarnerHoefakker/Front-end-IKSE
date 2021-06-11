@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   constructor(private httpClient: HttpClient,private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    console.log(this.baseUrl + '/api/auth/signup');
+    // console.log(this.baseUrl + '/api/auth/signup');
 
   }
 

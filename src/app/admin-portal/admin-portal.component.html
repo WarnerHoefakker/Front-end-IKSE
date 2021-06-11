@@ -1,4 +1,46 @@
-<!-- *ngFor="let product of data.data" -->
+<div class="form-popup" id="myForm">
+  <form [formGroup]="changeProductForm" class="form-container">
+
+    <label for="name"><b>Id</b></label>
+    <input type="text" placeholder="Enter product-id" formControlName="id" name="id" required>
+
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter name" formControlName="name" name="name" required>
+
+    <label for="description"><b>Description</b></label>
+    <input type="text" placeholder="Enter description" formControlName="description" name="description" required>
+
+    <label for="price"><b>Price</b></label>
+    <input type="text" placeholder="Enter price" name="price" formControlName="price" required>
+
+    <label for="image"><b>Image</b></label>
+    <input type="text" placeholder="Enter image path" name="image" formControlName="image" required>
+
+    <button type="submit" class="btn" (click)="editProduct()">Bijwerken</button>
+    <button type="button" class="btn cancel" (click)="closeForm()">Sluit venster</button>
+  </form>
+</div>
+
+<div class="form-popup" id="addForm">
+  <form [formGroup]="addProductForm" class="form-container">
+
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter name" formControlName="name" name="name" required>
+
+    <label for="description"><b>Description</b></label>
+    <input type="text" placeholder="Enter description" formControlName="description" name="description" required>
+
+    <label for="price"><b>Price</b></label>
+    <input type="text" placeholder="Enter price" name="price" formControlName="price" required>
+
+    <label for="image"><b>Image</b></label>
+    <input type="text" placeholder="Enter image path" name="image" formControlName="image" required>
+
+    <button type="submit" class="btn" (click)="addProduct()">Voeg product toe</button>
+    <button type="button" class="btn cancel" (click)="closeForm()">Sluit venster</button>
+  </form>
+</div>
+
 <div class="body" >
     <div class="container">
       <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
@@ -8,9 +50,7 @@
               <div class="col-md-5 col-sm-12 col-xs-12">
                 <div class="product-image"> 
                   <img alt="194x228" class="img-responsive" [src]="logo1"> 
-                  <span class="tag2 hot">
-                    HOT
-                  </span> 
+
                 </div>
               </div>
               <div class="col-md-7 col-sm-12 col-xs-12">
@@ -31,7 +71,10 @@
               <div class="product-info smart-form">
                 <div class="row">
                   <div class="col-md-6 col-sm-6 col-xs-6"> 
-                    <a (click)="addToCart(0)" class="btn btn-success">Toevoegen aan winkelmandje</a>
+                    <a (click)="openForm();" class="btn btn-success">Bewerk</a>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6"> 
+                    <a (click)="deleteProduct(1);" class="btn btn-success" id="1">Verwijder</a>
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
@@ -56,9 +99,7 @@
               <div class="col-md-5 col-sm-12 col-xs-12">
                 <div class="product-image"> 
                   <img alt="194x228" class="img-responsive" [src]="logo2"> 
-                  <span class="tag2 hot">
-                    HOT
-                  </span> 
+
                 </div>
               </div>
               <div class="col-md-7 col-sm-12 col-xs-12">
@@ -78,9 +119,12 @@
               </div>
               <div class="product-info smart-form">
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6"> 
-                    <a (click)="addToCart(1)" class="btn btn-success">Toevoegen aan winkelmandje</a>
-                  </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a href="javascript:void(0);" class="btn btn-success">Bewerk</a>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a (click)="deleteProduct(2);"  class="btn btn-success">Verwijder</a>
+                      </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
                       <label for="stars-rating-5"><i class="fa fa-star"></i></label>
@@ -104,9 +148,7 @@
               <div class="col-md-5 col-sm-12 col-xs-12">
                 <div class="product-image"> 
                   <img alt="194x228" class="img-responsive" [src]="logo3"> 
-                  <span class="tag2 hot">
-                    HOT
-                  </span> 
+
                 </div>
               </div>
               <div class="col-md-7 col-sm-12 col-xs-12">
@@ -126,9 +168,12 @@
               </div>
               <div class="product-info smart-form">
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6"> 
-                    <a href="javascript:void(0);" class="btn btn-success">Toevoegen aan winkelmandje</a>
-                  </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a href="javascript:void(0);" class="btn btn-success">Bewerk</a>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a (click)="deleteProduct(3);"  class="btn btn-success">Verwijder</a>
+                      </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
                       <label for="stars-rating-5"><i class="fa fa-star"></i></label>
@@ -152,9 +197,7 @@
               <div class="col-md-5 col-sm-12 col-xs-12">
                 <div class="product-image"> 
                   <img alt="194x228" class="img-responsive" [src]="logo4"> 
-                  <span class="tag2 hot">
-                    HOT
-                  </span> 
+
                 </div>
               </div>
               <div class="col-md-7 col-sm-12 col-xs-12">
@@ -174,9 +217,12 @@
               </div>
               <div class="product-info smart-form">
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6"> 
-                    <a href="javascript:void(0);" class="btn btn-success">Toevoegen aan winkelmandje</a>
-                  </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a href="javascript:void(0);" class="btn btn-success">Bewerk</a>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a (click)="deleteProduct(4);"  class="btn btn-success">Verwijder</a>
+                      </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
                       <label for="stars-rating-5"><i class="fa fa-star"></i></label>
@@ -222,9 +268,12 @@
               </div>
               <div class="product-info smart-form">
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6"> 
-                    <a href="javascript:void(0);" class="btn btn-success">Toevoegen aan winkelmandje</a>
-                  </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a href="javascript:void(0);" class="btn btn-success">Bewerk</a>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a (click)="deleteProduct(5);"  class="btn btn-success">Verwijder</a>
+                      </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
                       <label for="stars-rating-5"><i class="fa fa-star"></i></label>
@@ -270,9 +319,12 @@
               </div>
               <div class="product-info smart-form">
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6"> 
-                    <a href="javascript:void(0);" class="btn btn-success">Toevoegen aan winkelmandje</a>
-                  </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a href="javascript:void(0);" class="btn btn-success">Bewerk</a>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a (click)="deleteProduct(6);"  class="btn btn-success">Verwijder</a>
+                      </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
                       <label for="stars-rating-5"><i class="fa fa-star"></i></label>
@@ -318,9 +370,12 @@
               </div>
               <div class="product-info smart-form">
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6"> 
-                    <a href="javascript:void(0);" class="btn btn-success">Toevoegen aan winkelmandje</a>
-                  </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a href="javascript:void(0);" class="btn btn-success">Bewerk</a>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a (click)="deleteProduct(7);"  class="btn btn-success">Verwijder</a>
+                      </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
                       <label for="stars-rating-5"><i class="fa fa-star"></i></label>
@@ -366,9 +421,12 @@
               </div>
               <div class="product-info smart-form">
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6"> 
-                    <a href="javascript:void(0);" class="btn btn-success">Toevoegen aan winkelmandje</a>
-                  </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a href="javascript:void(0);" class="btn btn-success">Bewerk</a>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a (click)="deleteProduct(8);"  class="btn btn-success">Verwijder</a>
+                      </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
                       <label for="stars-rating-5"><i class="fa fa-star"></i></label>
@@ -414,9 +472,12 @@
               </div>
               <div class="product-info smart-form">
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6"> 
-                    <a href="javascript:void(0);" class="btn btn-success">Toevoegen aan winkelmandje</a>
-                  </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a href="javascript:void(0);" class="btn btn-success">Bewerk</a>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a (click)="deleteProduct(9);"  class="btn btn-success">Verwijder</a>
+                      </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
                       <label for="stars-rating-5"><i class="fa fa-star"></i></label>
@@ -462,9 +523,12 @@
               </div>
               <div class="product-info smart-form">
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6"> 
-                    <a href="javascript:void(0);" class="btn btn-success">Toevoegen aan winkelmandje</a>
-                  </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a href="javascript:void(0);" class="btn btn-success">Bewerk</a>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a (click)="deleteProduct(10);" class="btn btn-success">Verwijder</a>
+                      </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
                       <label for="stars-rating-5"><i class="fa fa-star"></i></label>
@@ -510,9 +574,12 @@
               </div>
               <div class="product-info smart-form">
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6"> 
-                    <a href="javascript:void(0);" class="btn btn-success">Toevoegen aan winkelmandje</a>
-                  </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a href="javascript:void(0);" class="btn btn-success">Bewerk</a>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a (click)="deleteProduct(11);"  class="btn btn-success">Verwijder</a>
+                      </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
                       <label for="stars-rating-5"><i class="fa fa-star"></i></label>
@@ -558,9 +625,12 @@
               </div>
               <div class="product-info smart-form">
                 <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-6"> 
-                    <a href="javascript:void(0);" class="btn btn-success">Toevoegen aan winkelmandje</a>
-                  </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a href="javascript:void(0);" class="btn btn-success">Bewerk</a>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6"> 
+                        <a (click)="deleteProduct(12);"  class="btn btn-success">Verwijder</a>
+                      </div>
                   <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="rating">
                       <label for="stars-rating-5"><i class="fa fa-star"></i></label>
@@ -577,6 +647,22 @@
         </div>
         <!-- end product -->
       </div>
+      <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
+        <div class="product-content product-wrap clearfix">
+          <div class="row">
+              <div class="product-info smart-form">
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-6"> 
+                    <a (click)="openAddForm();" class="btn btn-success" id="1">Voeg een product toe</a>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6"> 
+                    <a (click)="deleteAllProduct();" class="btn btn-success" id="1">Verwijder alle producten</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       
     </div>
   </div>

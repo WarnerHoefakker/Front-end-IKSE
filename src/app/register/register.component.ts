@@ -31,15 +31,33 @@ export class RegisterComponent implements OnInit {
       "username": this.signinForm.value.name,
       "email": this.signinForm.value.email,
       "password": this.signinForm.value.password,
-      "roles": ["moderator", "user", "admin"]
+      "roles": ["user"]
     })
     .then(function (response) {
       console.log(response);
-      alert("Succesfully logged in!");
+      window.location.href = '/signin';
     })
     .catch(function (error) {
       console.log(error);
       alert("Attempt unsuccesful");
     });
   }
+
+  admin(){
+    axios.post(this.baseUrl + '/api/auth/signup', {
+      "username": this.signinForm.value.name,
+      "email": this.signinForm.value.email,
+      "password": this.signinForm.value.password,
+      "roles": ["moderator", "user", "admin"]
+    })
+    .then(function (response) {
+      console.log(response);
+      window.location.href = '/signin';
+    })
+    .catch(function (error) {
+      console.log(error);
+      alert("Attempt unsuccesful");
+    });
+  }
+
 }

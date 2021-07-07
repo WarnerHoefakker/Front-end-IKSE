@@ -11,7 +11,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class SigninComponent implements OnInit {
   title = 'webshop';
-  baseUrl = "http://localhost:8080";
+  baseUrl = "https://klectric-9up4r.ondigitalocean.app";
   signinForm = this.formBuilder.group({
     name: '',
     email: '',

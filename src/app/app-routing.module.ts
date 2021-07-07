@@ -6,6 +6,7 @@ import { ProductsComponent } from './products/products.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { AdminPortalComponent } from './admin-portal/admin-portal.component';
+import { ClientinformationComponent } from './clientinformation/clientinformation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,7 +15,9 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'home', component: FrontpageComponent },
   { path: 'shoppingcart', component: ShoppingcartComponent },
-  { path: 'admin', component: AdminPortalComponent }
+  { path: 'admin', component: AdminPortalComponent },
+  { path: 'information', component: ClientinformationComponent }
+
 
 ];
 

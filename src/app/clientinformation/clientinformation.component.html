@@ -1,0 +1,34 @@
+
+<div class="jumbotron text-center">
+    <div class="form-box">
+        <form [formGroup]="informationForm">
+          <div class="form-group">
+            <label for="fname">Voornaam</label>
+            <input type="text" class="form-control" id="exampleInputfName1" aria-describedby="nameHelp" formControlName="fname" placeholder="Tom">
+          </div>
+          <div class="form-group">
+            <label for="lname">Achternaam</label>
+            <input type="text" class="form-control" id="exampleInputlName1" aria-describedby="emailHelp" formControlName="lname" placeholder="Janssen">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email" placeholder="tom.janssen@klectric.nl">
+          </div>
+          <div class="form-group">
+            <label for="adr">Adres + huisnummer</label>
+            <input type="text" class="form-control" id="exampleInputAddress" aria-describedby="emailHelp" formControlName="adr" placeholder="Rapenburg 143">
+          </div>
+          <div class="form-group">
+            <label for="city">Stad</label>
+            <input type="text" class="form-control" id="exampleInputCity" aria-describedby="emailHelp" formControlName="city" placeholder="Leiden">
+          </div>
+          <div class="form-group">
+            <label for="zip">Postcode</label>
+            <input type="text" class="form-control" id="exampleInputZip" aria-describedby="emailHelp" formControlName="zip" placeholder="2312JK">
+          </div>
+          <button type="submit" class="btn btn-primary" (click)="toPaymentProvider()" >Naar betalen</button>
+        </form>
+        </div>
+      </div>
+      
+      <router-outlet></router-outlet>

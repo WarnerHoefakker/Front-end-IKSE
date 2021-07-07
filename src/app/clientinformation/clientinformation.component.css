@@ -1,0 +1,68 @@
+
+form {
+  width: 50%;
+  margin-left: 25%;
+  margin-top : 5%;
+  padding-top: 4%;
+}
+
+.form-box {
+width: 30%;
+height: 42em;
+text-align: left;
+/* margin-top: 10em; */
+border: 2px solid #000;
+margin-left: 35%;
+background-color: black;
+color: white;
+border-radius: 15px;
+margin-top: -15vh;
+
+}
+
+
+.jumbotron {
+  padding: 280px 0px;
+  background-image: url("/assets/achtergrond.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.btn-primary {
+  background-color: #e66465;
+  border: 2px solid #e66465;
+}
+
+@media screen and (max-width: 768px) {
+  .form-box {
+      width: 100%;
+      height: 75em;
+      /* margin-top: 10em; */
+      text-align: left;
+      padding-top: 3vh;
+      margin-top: -35vh;
+      border: 2px solid #000;
+      margin-left: 0%;
+      background-color: black;
+      color: white;
+      border-radius: 0px;
+      margin-bottom: -10vh;
+  }
+
+  .jumbotron {
+      padding: 0px 0px;
+      /* background-image: url(""); */
+      background-repeat: no-repeat;
+      background-size: auto;
+  }
+
+  
+  form {
+      width: 80%;
+      margin-left: 10%;
+      margin-top : 80%;
+      padding-top: 4%;
+  }
+
+
+}

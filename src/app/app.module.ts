@@ -15,6 +15,7 @@ import { ProductsComponent } from './products/products.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { AdminPortalComponent } from './admin-portal/admin-portal.component';
+import { ClientinformationComponent } from './clientinformation/clientinformation.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AdminPortalComponent } from './admin-portal/admin-portal.component';
     ProductsComponent,
     FrontpageComponent,
     ShoppingcartComponent,
-    AdminPortalComponent
+    AdminPortalComponent,
+    ClientinformationComponent
   ],
   imports: [
     BrowserModule,

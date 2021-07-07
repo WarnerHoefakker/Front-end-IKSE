@@ -11,7 +11,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   title = 'webshop';
-  baseUrl = "http://localhost:8080";
+  baseUrl = "https://klectric-9up4r.ondigitalocean.app";
   signinForm = this.formBuilder.group({
     name: '',
     email: '',
@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
   constructor(private httpClient: HttpClient,private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    console.log(this.baseUrl + '/api/auth/signup');
+    // console.log(this.baseUrl + '/api/auth/signup');
   }
 
   

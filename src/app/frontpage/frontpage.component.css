@@ -46,7 +46,7 @@
   }
 
   .glyphicon {
-    color: #F6BE00;
+    color: #7258d5;
   }
 
   @media screen and (max-width: 768px) {
@@ -54,4 +54,21 @@
       text-align: center;
       margin: 25px 0;
     }
+
+    #sign-in {
+      position: relative;
+      margin-top: 4em;
+      width: 15em;
+      height: 2.5em;
+      border-radius: 10px;
+      background-color: black;
+      border: 2px solid black;
+      font-size: 20px;
+  
+  }
+
+  .jumbotron h1{
+    margin-top: -3em;
+  }
+
   }

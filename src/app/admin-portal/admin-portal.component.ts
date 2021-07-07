@@ -25,7 +25,7 @@ export class AdminPortalComponent implements OnInit {
     image: ''
   });
 
-  baseUrl = "http://localhost:8080";
+  baseUrl = "https://klectric-9up4r.ondigitalocean.app";
   response: any;
   product: any;
   noData: any;
@@ -94,7 +94,7 @@ export class AdminPortalComponent implements OnInit {
   }
 
   editProduct() {
-    const baseUrl = "http://localhost:8080";
+    const baseUrl = "https://klectric-9up4r.ondigitalocean.app";
     let accessToken = sessionStorage.getItem('accessToken');
     let number = parseInt(this.changeProductForm.value.price);
     console.log(number);
@@ -120,7 +120,7 @@ export class AdminPortalComponent implements OnInit {
   }
 
   addProduct() {
-    const baseUrl = "http://localhost:8080";
+    const baseUrl = "https://klectric-9up4r.ondigitalocean.app";
     let accessToken = sessionStorage.getItem('accessToken');
     let number = parseInt(this.addProductForm.value.price);
 
@@ -145,7 +145,7 @@ export class AdminPortalComponent implements OnInit {
   }
 
   deleteAllProduct() {
-    const baseUrl = "http://localhost:8080";
+    const baseUrl = "https://klectric-9up4r.ondigitalocean.app";
     let accessToken = sessionStorage.getItem('accessToken');
     let number = parseInt(this.addProductForm.value.price);
 
@@ -160,6 +160,26 @@ export class AdminPortalComponent implements OnInit {
     })
     .catch(function (error) {
       alert("De poging om alle producten te verwijderen is niet gelukt.");
+    });
+  }
+
+  }
+
+  deleteAllOrders() {
+    const baseUrl = "https://klectric-9up4r.ondigitalocean.app";
+    let accessToken = sessionStorage.getItem('accessToken');
+
+    if (confirm('Weet je zeker dat je alle orders wilt verwijderen?')) {
+      axios.delete(baseUrl + '/api/orders/', 
+      { headers: {
+        'Content-Type': 'application/json',
+        'x-access-token': accessToken
+      }})
+    .then(function (response) {
+      alert("Het verwijderen van alle bestellingen is gelukt!");
+    })
+    .catch(function (error) {
+      alert("De poging om alle bestellingen te verwijderen is niet gelukt.");
     });
   }
 
@@ -186,7 +206,7 @@ export class AdminPortalComponent implements OnInit {
 
   function getProducts() {
     var data = 0;
-    const baseUrl = "http://localhost:8080";
+    const baseUrl = "https://klectric-9up4r.ondigitalocean.app";
     let accessToken = sessionStorage.getItem('accessToken');
 
     axios.get(baseUrl + '/api/products', {

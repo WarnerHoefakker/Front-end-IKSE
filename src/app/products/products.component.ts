@@ -8,7 +8,7 @@ import axios from 'axios';
 })
 export class ProductsComponent implements OnInit {
 
-  baseUrl = "http://localhost:8080";
+  baseUrl = "https://klectric-9up4r.ondigitalocean.app";
   response: any;
   product: any;
   noData: any;
@@ -31,13 +31,16 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     if (sessionStorage.getItem('accessToken') === null){
       window.location.href = '/signin';
-    }
+    } 
+
     getProducts();
-    // location.reload();
-    // var data = sessionStorage.getItem('products');
+
     this.product = JSON.parse(sessionStorage.getItem('products') || '{}');
-    // const obj = JSON.parse(data);
-    // console.log(this.product[0].image);
+
+    // if (localStorage.getItem("products") === null) {
+    //   window.location.href = '/home';
+    // }
+
     this.logo1 = this.product[0].image;
     this.logo2 = this.product[1].image;
     this.logo3 = this.product[2].image;
@@ -55,7 +58,7 @@ export class ProductsComponent implements OnInit {
 
     addToCart(value: any) {
       var data = 0;
-      const baseUrl = "http://localhost:8080";
+      const baseUrl = "https://klectric-9up4r.ondigitalocean.app";
       let accessToken = sessionStorage.getItem('accessToken');
 
       axios.get(baseUrl + '/api/products', {
@@ -69,24 +72,23 @@ export class ProductsComponent implements OnInit {
         var id = response.data[value].id;
         let cart = [];
         cart.push(data);
-        console.log(data);
+        // console.log(data);
         if (sessionStorage.getItem('cartItems') === null){
           sessionStorage.setItem('cartItems', JSON.stringify(cart));
+          (<HTMLInputElement>document.getElementById(value)).style.pointerEvents = "none";
+          (<HTMLInputElement>document.getElementById(value)).style.backgroundColor = "grey";
+          (<HTMLInputElement>document.getElementById(value)).style.border = "2px solid grey"; 
+          location.reload();
         } else if (sessionStorage.getItem('cartItems') !== null) {
-          let currentCart = JSON.parse(sessionStorage.getItem('cartItems') || '{}');
-          
-          for(var i = 0; i < 10; i++) {
-                if (currentCart[i].id == value) {
-                  console.log(currentCart[i].id);
-                  console.log(id);
-                } else {
-                  let currentCart = JSON.parse(sessionStorage.getItem('cartItems') || '{}');
-                  currentCart.push(data);
-                  sessionStorage.setItem('cartItems', JSON.stringify(currentCart));
-                }
+
+          (<HTMLInputElement>document.getElementById(value)).style.pointerEvents = "none";
+          (<HTMLInputElement>document.getElementById(value)).style.backgroundColor = "grey";
+          (<HTMLInputElement>document.getElementById(value)).style.border = "2px solid grey"; 
+
+              let currentCart = JSON.parse(sessionStorage.getItem('cartItems') || '{}');
+              currentCart.push(data);
+              sessionStorage.setItem('cartItems', JSON.stringify(currentCart));
             }
-        }
-        
       })
       .catch(function (error) {
         console.log(error);
@@ -97,7 +99,7 @@ export class ProductsComponent implements OnInit {
 
   function getProducts() {
     var data = 0;
-    const baseUrl = "http://localhost:8080";
+    const baseUrl = "https://klectric-9up4r.ondigitalocean.app";
     let accessToken = sessionStorage.getItem('accessToken');
 
     axios.get(baseUrl + '/api/products', {
@@ -108,7 +110,6 @@ export class ProductsComponent implements OnInit {
     })
     .then(function (response) {
       data = response.data;
-      // console.log(response.data[0]);
       sessionStorage.setItem('products', JSON.stringify(response.data));
       return response.data[0];
     })

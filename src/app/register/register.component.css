@@ -22,9 +22,9 @@ form {
 
 .jumbotron {
     padding: 280px 0px;
-    background-image: url("/assets/achtergrond.jpg");
-    background-repeat: no-repeat;
-    background-size: auto;
+    background-image: url("/assets/achtergrond.jpg") no-repeat;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
 }
 
 .btn-primary {

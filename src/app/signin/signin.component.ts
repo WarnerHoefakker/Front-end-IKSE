@@ -21,10 +21,7 @@ export class SigninComponent implements OnInit {
   constructor(private httpClient: HttpClient,private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    // console.log(this.baseUrl + '/api/auth/signup');
   }
-
-  
 
   clickMe(){
     axios.post(this.baseUrl + '/api/auth/signin', {

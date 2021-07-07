@@ -78,7 +78,6 @@ export class ProductsComponent implements OnInit {
           (<HTMLInputElement>document.getElementById(value)).style.pointerEvents = "none";
           (<HTMLInputElement>document.getElementById(value)).style.backgroundColor = "grey";
           (<HTMLInputElement>document.getElementById(value)).style.border = "2px solid grey"; 
-          location.reload();
         } else if (sessionStorage.getItem('cartItems') !== null) {
 
           (<HTMLInputElement>document.getElementById(value)).style.pointerEvents = "none";

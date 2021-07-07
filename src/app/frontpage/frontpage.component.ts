@@ -21,7 +21,7 @@ export class FrontpageComponent implements OnInit {
   constructor(private httpClient: HttpClient,private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    console.log(this.baseUrl + '/api/auth/signup');
+
   }
 
   clickMe(){
